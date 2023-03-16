@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
                 //Launch Custom Dialog
                 customDialogFunction()
             }
+
+            val btnCustomProgress : Button = findViewById(R.id.btn_custom_progress_dialog)
+            btnCustomProgress.setOnClickListener {
+                customProgressDialogFunction()
+            }
     }
 
     /**
@@ -106,5 +111,15 @@ class MainActivity : AppCompatActivity() {
         }
         //Start the dialog and display it on screen.
         customDialog.show()
+    }
+
+
+    private fun customProgressDialogFunction() {
+        val customProgressDialog = Dialog(this)
+
+        customProgressDialog.setContentView(R.layout.dialog_custom_progress)
+
+        customProgressDialog.show()
+
     }
 }
